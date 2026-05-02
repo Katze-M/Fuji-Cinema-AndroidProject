@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="40dp"
+            android:paddingTop="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="25dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnBackCard"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    app:cardCornerRadius="22.5dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@android:drawable/ic_media_previous"
+                        android:padding="12dp"
+                        app:tint="#1B4332"
+                        android:scaleType="centerInside" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ticket Reservation"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#1B4332"
+                    android:layout_marginStart="15dp" />
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="MOVIE TITLE" android:textColor="#2D6A4F" android:textSize="12sp" android:textStyle="bold"/>
+            <AutoCompleteTextView android:id="@+id/autoMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="55dp" android:layout_marginTop="5dp"
+                android:hint="Type to search..."
+                android:textColor="#000000"
+                android:textColorHint="#9BA1A6"
+                android:background="@android:drawable/editbox_background" android:paddingStart="15dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="15dp" android:weightSum="2">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="5dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SHOW DATE" android:textColor="#2D6A4F" android:textSize="11sp" android:textStyle="bold"/>
+                    <EditText android:id="@+id/editDate"
+                        android:layout_width="match_parent" android:layout_height="55dp"
+                        android:layout_marginTop="5dp" android:hint="Pick Date"
+                        android:textColor="#000000"
+                        android:focusable="false" android:clickable="true"
+                        android:background="@android:drawable/editbox_background" android:paddingStart="10dp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="5dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SHOW TIME" android:textColor="#2D6A4F" android:textSize="11sp" android:textStyle="bold"/>
+                    <Spinner android:id="@+id/spinnerTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/spinner_bg"
+                        android:spinnerMode="dropdown"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NUMBER OF TICKETS" android:layout_marginTop="15dp" android:textColor="#2D6A4F" android:textSize="12sp" android:textStyle="bold"/>
+            <EditText android:id="@+id/editTicketQty"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:hint="Enter amount"
+                android:textColor="#000000"
+                android:inputType="number" android:background="@android:drawable/editbox_background" android:paddingStart="15dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="*Seats must match number of tickets" android:textColor="#D90429" android:textSize="10sp" android:layout_marginTop="2dp" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CHOOSE SEATS" android:textStyle="bold" android:textColor="#2D6A4F" android:layout_marginTop="20dp" android:textSize="12sp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="10dp">
+                <View android:layout_width="12dp" android:layout_height="12dp" android:background="#9BA1A6" android:layout_marginEnd="4dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Available" android:textSize="10sp" android:layout_marginEnd="10dp"/>
+                <View android:layout_width="12dp" android:layout_height="12dp" android:background="#2D6A4F" android:layout_marginEnd="4dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Selected" android:textSize="10sp" android:layout_marginEnd="10dp"/>
+                <View android:layout_width="12dp" android:layout_height="12dp" android:background="#000000" android:layout_marginEnd="4dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Taken" android:textSize="10sp"/>
+            </LinearLayout>
+
+            <GridLayout android:id="@+id/seatGrid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:columnCount="5" android:layout_marginTop="10dp" android:useDefaultMargins="true"/>
+
+            <TextView android:id="@+id/txtTotalPrice" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Amount Due: ₱0.00" android:textAlignment="viewEnd" android:textColor="#1B4332" android:textSize="18sp" android:textStyle="bold" />
+
+            <View android:layout_width="match_parent" android:layout_height="1.5dp" android:layout_marginTop="25dp" android:layout_marginBottom="25dp" android:background="#C1C1C1"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CUSTOMER INFORMATION" android:textColor="#2D6A4F" android:textSize="12sp" android:textStyle="bold"/>
+
+            <EditText android:id="@+id/editName"
+                android:layout_width="match_parent" android:layout_height="55dp"
+                android:hint="Full Name"
+                android:textColor="#000000"
+                android:textColorHint="#9BA1A6"
+                android:layout_marginTop="5dp"
+                android:background="@android:drawable/editbox_background" android:paddingStart="15dp"/>
+
+            <EditText android:id="@+id/editContact"
+                android:layout_width="match_parent" android:layout_height="55dp"
+                android:hint="Email/Phone"
+                android:textColor="#000000"
+                android:textColorHint="#9BA1A6"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background" android:paddingStart="15dp"/>
+
+            <Button android:id="@+id/btnFinalBook"
+                android:layout_width="match_parent" android:layout_height="65dp"
+                android:layout_marginTop="30dp"
+                android:text="BOOK NOW"
+                android:backgroundTint="#2D6A4F"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <View android:layout_width="match_parent" android:layout_height="120dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
